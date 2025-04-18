@@ -1,0 +1,12 @@
+services:
+  zomboid:
+    image: pz-server:0.01
+    container_name: pz-server
+    ports:
+      - "16261:16261/udp"
+      - "8766:8766/udp"
+      - "27015:27015/udp"
+    volumes:
+      - ./zomboid:/root/Zomboid  
+      - ./data:/opt/pzserver
+    restart: unless-stopped
